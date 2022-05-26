@@ -15,7 +15,7 @@ function Home() {
       .then((userCredentials) => {
         setUser({
           name: userCredentials.user.displayName,
-          profileImage: userCredentials.user.profileImage,
+          profileImage: userCredentials.user.photoURL,
         });
       })
       .catch((error) => {
@@ -24,7 +24,7 @@ function Home() {
   };
 
   useEffect(() => {
-    console.log(`welcome user ${user.name}`);
+    console.log(`welcome user ${user.name} ${user.profileImage}`);
   }, [user]);
   return (
     <>
