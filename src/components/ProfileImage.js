@@ -1,3 +1,6 @@
-export const ProfileImage = (props) => {
-  return <img src={props.image} alt="user" />;
+import { useUser } from "../providers/UserProvider";
+
+export const ProfileImage = () => {
+  const { user } = useUser();
+  return <img src={user.profileImage} alt="user" />;
 };
